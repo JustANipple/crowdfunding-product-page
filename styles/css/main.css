@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 1.5rem;
   font-family: "Commissioner", sans-serif;
   font-size: 0.8888888889rem;
   /* background shorthand
@@ -178,13 +178,12 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 1.125rem;
   background-color: white;
   margin-inline: 1.5rem;
-  margin-block-start: 10rem;
+  margin-block-start: 8.5rem;
   border-radius: 0.5rem;
   padding-block: 3.5rem 2.5rem;
   padding-inline: 1.5rem;
   position: relative;
   max-width: 45.5rem;
-  width: 100%;
 }
 .crowdfund_header::before {
   content: "";
@@ -248,8 +247,9 @@ p, h1, h2, h3, h4, h5, h6 {
   .crowdfund_header {
     padding-block-end: 2.75rem;
     padding-inline: 3rem;
-    margin-block-start: 12rem;
+    margin-block-start: 10.5rem;
     gap: 2.125rem;
+    width: 100%;
   }
   .crowdfund_header .header_topic .topic_title {
     font-size: 1.75rem;
@@ -260,5 +260,15 @@ p, h1, h2, h3, h4, h5, h6 {
     max-width: 11rem;
   }
 }
+.progression .progression_bar {
+  -webkit-appearance: none;
+}
+.progression .progression_bar::-webkit-progress-value {
+  background-color: hsl(176, 50%, 47%);
+}
+.progression .progression_bar::-webkit-progress-bar {
+  background-color: hsl(0, 0%, 92%);
+}
+
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */

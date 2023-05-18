@@ -2,7 +2,7 @@
 @use "../abstracts/variables" as v;
 
 body {
-    @include m.flex-vertical();
+    @include m.flex-vertical($gap: 1.5rem);
     font-family: v.$ff;
     font-size: calc(v.$fs / 1.125);
 

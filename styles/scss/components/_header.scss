@@ -5,13 +5,12 @@
     @include m.flex-vertical($gap: 1.125rem);
     background-color: white;
     margin-inline: 1.5rem;
-    margin-block-start: 10rem;
+    margin-block-start: 8.5rem;
     border-radius: .5rem;
     padding-block: 3.5rem 2.5rem;
     padding-inline: 1.5rem;
     position: relative;
     max-width: 45.5rem;
-    width: 100%;
 
     &::before {
         content: "";
@@ -72,8 +71,9 @@
     .crowdfund_header {
         padding-block-end: 2.75rem;
         padding-inline: 3rem;
-        margin-block-start: 12rem;
+        margin-block-start: 10.5rem;
         gap: 2.125rem;
+        width: 100%;
 
         .header_topic {
 

@@ -1,0 +1,17 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.progression {
+
+    .progression_bar {
+        -webkit-appearance: none;
+
+        &::-webkit-progress-value {
+            background-color: v.$btn-clr;
+        }
+
+        &::-webkit-progress-bar {
+            background-color: v.$dropdown-line-clr;
+        }
+    }
+}
