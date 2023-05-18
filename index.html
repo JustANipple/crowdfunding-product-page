@@ -11,11 +11,31 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles/css/main.css">
   <!-- Script -->
-  <script src="scripts/scripts.js"></script>
+  <script src="scripts/scripts.js" defer></script>
   <!-- Font Family -->
-  <!---->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <h1 class="sr_only">Crowdfunding product page</h1>
+
+  <nav class="nav_bar">
+    <img 
+    src="images/logo.svg" 
+    alt="crowdfund"
+    class="bar_logo">
+    <div class="bar_menu">
+      <div class="menu_options">
+        <p class="option">About</p>
+        <p class="option">Discover</p>
+        <p class="option">Get Started</p>
+      </div>
+      <button class="menu_dropdown_btn">dropdown button</button>
+    </div>
+  </nav>
+
   About
   Discover
   Get Started

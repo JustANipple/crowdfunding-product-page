@@ -1,0 +1,66 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.nav_bar {
+    @include m.flex-horizontal($justify-content: space-between);
+    padding-block: 2rem;
+    padding-inline: 1.5rem;
+    position: relative;
+
+    //.bar_logo{}
+
+    .bar_menu {
+        @include m.flex-horizontal();
+
+        .menu_options {
+            @include m.flex-vertical($align-items: flex-start);
+            color: v.$heading-clr;
+            font-size: calc(v.$fs * 1.125);
+            font-weight: v.$fw-medium;
+            background-color: white;
+            border-radius: .5rem;
+            position: absolute;
+            top: 5rem;
+            left: 0;
+            right: 0;
+            margin-inline: auto 1.5rem;
+            max-width: 20.75rem;
+            overflow: hidden;
+
+            max-height: 0;
+
+            .option {
+                padding: 1.375rem;
+                position: relative;
+                width: 100%;
+                
+                &:not(:last-child) {
+                    border-bottom: 1px solid v.$dropdown-line-clr;
+                }
+            }
+        }
+
+        .openMenu {
+            max-height: 13rem;
+        }
+        
+
+        .menu_dropdown_btn {
+            background: 
+            transparent
+            url(../../../images/icon-hamburger.svg)
+            no-repeat
+            center top;
+            width: 1rem;
+            height: 1rem;
+            overflow: hidden;
+            color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .closeMenu {
+            background-image: url(../../../images/icon-close-menu.svg);
+        }
+    }
+}

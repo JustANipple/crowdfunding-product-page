@@ -1,0 +1,39 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+body {
+    font-family: v.$ff;
+    font-size: calc(v.$fs / 1.125);
+
+    /* background shorthand
+    background: 
+    [background-color] 
+    [background-image] 
+    [background-repeat] 
+    [background-attachment] 
+    [background-position] / [background-size];
+    */
+    background: 
+    url(../../../images/image-hero-mobile.jpg)
+    no-repeat
+    center top / contain;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 10rem;
+        width: 100%;
+        box-shadow: inset 0 8rem 8rem -7.75rem black;
+        z-index: -1;
+    }
+
+    @media screen and (min-width: 425px) {
+        background-image:url(../../../images/image-hero-desktop.jpg);
+        font-size: v.$fs;
+    }
+}
+
+.sr_only {
+    @include m.srOnlyTitle();
+}
