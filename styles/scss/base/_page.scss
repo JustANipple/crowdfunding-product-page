@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as v;
 
 body {
+    @include m.flex-vertical();
     font-family: v.$ff;
     font-size: calc(v.$fs / 1.125);
 
@@ -14,6 +15,7 @@ body {
     [background-position] / [background-size];
     */
     background: 
+    v.$body-bg
     url(../../../images/image-hero-mobile.jpg)
     no-repeat
     center top / contain;

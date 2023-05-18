@@ -1,0 +1,95 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.crowdfund_header {
+    @include m.flex-vertical($gap: 1.125rem);
+    background-color: white;
+    margin-inline: 1.5rem;
+    margin-block-start: 10rem;
+    border-radius: .5rem;
+    padding-block: 3.5rem 2.5rem;
+    padding-inline: 1.5rem;
+    position: relative;
+    max-width: 45.5rem;
+    width: 100%;
+
+    &::before {
+        content: "";
+        background-image: url(../../../images/logo-mastercraft.svg);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: 3.5rem;
+        height: 3.5rem;
+        top: -1.75rem;
+    }
+
+    .header_topic {
+        @include m.flex-vertical($gap: 1.125rem);
+        text-align: center;
+
+        .topic_title {
+            line-height: 1.125;
+        }
+
+        .topic_description {
+            color: v.$par-clr;
+        }
+    }
+
+    .header_buttons {
+        @include m.flex-horizontal($justify-content: space-between);
+        width: 100%;
+
+        button {
+            border: none;
+            border-radius: 100vw;
+            font-weight: v.$fw-bold;
+        }
+
+        .button_back_project {
+            font-size: calc(v.$fs);
+            background-color: v.$btn-clr;
+            color: white;
+            padding-block: 1rem;
+            padding-inline: 2.75rem;
+            font-weight: v.$fw-medium;
+        }
+
+        .button_bookmark {
+            @include m.flex-horizontal();
+            padding: 0;
+            overflow: hidden;
+            max-width: 3.5rem;
+            color: v.$par-clr;
+        }
+    }
+}
+
+@media screen and (min-width: 528px) {
+
+    .crowdfund_header {
+        padding-block-end: 2.75rem;
+        padding-inline: 3rem;
+        margin-block-start: 12rem;
+        gap: 2.125rem;
+
+        .header_topic {
+
+            .topic_title {
+                font-size: calc(v.$fs * 1.75);
+            }
+        }
+
+        .header_buttons {
+    
+            .button_bookmark {
+                $padding: 1rem;
+                padding-inline-end: $padding;
+                gap: $padding;
+                max-width: 11rem;
+            }
+        }
+    }
+}
