@@ -44,6 +44,17 @@ body::before {
   left: 0;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 45.5rem;
+  margin-block-start: 8.5rem;
+  margin-inline: 1.5rem;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -177,13 +188,11 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 1.125rem;
   background-color: white;
-  margin-inline: 1.5rem;
-  margin-block-start: 8.5rem;
   border-radius: 0.5rem;
   padding-block: 3.5rem 2.5rem;
   padding-inline: 1.5rem;
   position: relative;
-  max-width: 45.5rem;
+  box-shadow: 0 0 0.9rem -0.875rem black;
 }
 .crowdfund_header::before {
   content: "";
@@ -247,7 +256,6 @@ p, h1, h2, h3, h4, h5, h6 {
   .crowdfund_header {
     padding-block-end: 2.75rem;
     padding-inline: 3rem;
-    margin-block-start: 10.5rem;
     gap: 2.125rem;
     width: 100%;
   }
@@ -260,15 +268,43 @@ p, h1, h2, h3, h4, h5, h6 {
     max-width: 11rem;
   }
 }
-.progression .progression_bar {
-  -webkit-appearance: none;
+.progression {
+  background-color: white;
+  margin-inline: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.9rem -0.875rem black;
+  width: 100%;
 }
-.progression .progression_bar::-webkit-progress-value {
-  background-color: hsl(176, 50%, 47%);
+.progression .progression_stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  text-align: center;
 }
-.progression .progression_bar::-webkit-progress-bar {
-  background-color: hsl(0, 0%, 92%);
+.progression .progression_stat .stat_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.125rem;
+  padding-block: 1rem;
+  position: relative;
 }
-
+.progression .progression_stat .stat_block:not(:last-child)::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 5rem;
+  border-bottom: 1px solid hsl(0, 0%, 84%);
+}
+.progression .progression_stat .stat_block .block_value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.progression .progression_stat .stat_block .block_text {
+  color: hsl(0, 0%, 48%);
+}
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */

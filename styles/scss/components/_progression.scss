@@ -2,16 +2,43 @@
 @use "../abstracts/variables" as v;
 
 .progression {
+    background-color: white;
+    margin-inline: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 .9rem -.875rem black;
+    width: 100%;
+
+    //.sr_only{}
+
+    .progression_stat {
+        @include m.flex-vertical();
+        text-align: center;
+
+        .stat_block {
+            @include m.flex-vertical($gap: .125rem);
+            padding-block: 1rem;
+            position: relative;
+
+            &:not(:last-child)::after {
+                content: " ";
+                position: absolute;
+                bottom: 0;
+                width: 5rem;
+                border-bottom: 1px solid v.$stat-border-clr;
+            }
+
+            .block_value {
+                font-size: calc(v.$fs * 2);
+                font-weight: v.$fw-bold;
+            }
+
+            .block_text {
+                color: v.$par-clr;
+            }
+        }
+    }
 
     .progression_bar {
-        -webkit-appearance: none;
-
-        &::-webkit-progress-value {
-            background-color: v.$btn-clr;
-        }
-
-        &::-webkit-progress-bar {
-            background-color: v.$dropdown-line-clr;
-        }
+        
     }
 }

@@ -39,3 +39,10 @@ body {
 .sr_only {
     @include m.srOnlyTitle();
 }
+
+main {
+    @include m.flex-vertical($gap: 1rem);
+    max-width: 45.5rem;
+    margin-block-start: 8.5rem;
+    margin-inline: 1.5rem;
+}
