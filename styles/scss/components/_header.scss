@@ -81,6 +81,10 @@
         }
 
         .header_buttons {
+
+            .button_back_project {
+                cursor: pointer;
+            }
     
             .button_bookmark {
                 $padding: 1rem;

@@ -57,7 +57,7 @@ main {
   margin-block-start: 8.5rem;
   margin-inline: 1.5rem;
   position: relative;
-  z-index: -2;
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -108,7 +108,6 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 0;
   padding-block: 2rem;
   padding-inline: 1.5rem;
-  position: relative;
   width: 100%;
 }
 .nav_bar.darkLayer::before {
@@ -117,10 +116,10 @@ p, h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   top: 0;
-  height: 45rem;
+  bottom: 0;
   background: linear-gradient(black, transparent);
-  opacity: 75%;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 .nav_bar .bar_menu {
   display: flex;
@@ -148,7 +147,8 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 20.75rem;
   overflow: hidden;
   max-height: 0;
-  z-index: 1;
+  z-index: 2;
+  background-blend-mode: darken;
 }
 .nav_bar .bar_menu .menu_options .option {
   padding: 1.375rem;
@@ -285,6 +285,9 @@ p, h1, h2, h3, h4, h5, h6 {
   }
   .crowdfund_header .header_topic .topic_title {
     font-size: 1.75rem;
+  }
+  .crowdfund_header .header_buttons .button_back_project {
+    cursor: pointer;
   }
   .crowdfund_header .header_buttons .button_bookmark {
     padding-inline-end: 1rem;
