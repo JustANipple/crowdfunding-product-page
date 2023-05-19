@@ -2,7 +2,10 @@
 @use "../abstracts/variables" as v;
 
 .progression {
+    @include m.flex-vertical();
     background-color: white;
+    padding-block: 1.5rem 2rem;
+    padding-inline: 1.5rem;
     margin-inline: 1.5rem;
     border-radius: .5rem;
     box-shadow: 0 0 .9rem -.875rem black;
@@ -16,8 +19,12 @@
 
         .stat_block {
             @include m.flex-vertical($gap: .125rem);
-            padding-block: 1rem;
+            padding-block: 1.5rem;
             position: relative;
+
+            &:nth-child(1) {
+                padding-block: 0 1.5rem;
+            }
 
             &:not(:last-child)::after {
                 content: " ";
@@ -39,6 +46,21 @@
     }
 
     .progression_bar {
+        width: 100%;
+        -webkit-appearance: none;
         
+        &::-webkit-progress-bar,
+        &::-webkit-progress-value {
+            border-radius: 100vw;
+        }
+
+        &::-webkit-progress-bar {
+           background-color: v.$dropdown-line-clr;
+           height: .75rem;
+        }
+
+        &::-webkit-progress-value {
+            background-color: v.$btn-clr;
+        }
     }
 }

@@ -41,8 +41,12 @@ body {
 }
 
 main {
-    @include m.flex-vertical($gap: 1rem);
-    max-width: 45.5rem;
+    @include m.flex-vertical($gap: 2rem);
     margin-block-start: 8.5rem;
     margin-inline: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        width: 45.5rem;
+        margin-block-start: 10rem;
+    }
 }
