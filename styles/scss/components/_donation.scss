@@ -1,0 +1,45 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.donation {
+    @include m.flex-vertical($gap: 2.5rem);
+    background-color: white;
+    box-shadow: 0 0 .9rem -.875rem black;
+    border-radius: .5rem;
+    padding-block: 2.5rem;
+    padding-inline: 1.5rem;
+
+    .about {
+        @include m.flex-vertical($gap: 2rem, $align-items: flex-start);
+
+        .title {
+            font-size: calc(v.$fs * 1.125);
+        }
+
+        .par {
+            color: v.$par-clr;
+        }
+    }
+
+    .reward_list {
+        @include m.flex-vertical($gap: 1.5rem);
+
+        .reward {
+            @include m.flex-vertical($align-items: flex-start, $gap: 1rem);
+            padding: 1.5rem;
+            border: 1px solid v.$stat-border-clr;
+            border-radius: .5rem;
+
+            .reward_header {
+                @include m.flex-vertical($align-items: flex-start, $gap: .25rem);
+
+                //.header_title{}
+
+                .header_pledge {
+                    color: v.$btn-clr;
+                    font-weight: v.$fw-medium;
+                }
+            }
+        }
+    }
+}

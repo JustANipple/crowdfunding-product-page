@@ -377,5 +377,59 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
+.donation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: white;
+  box-shadow: 0 0 0.9rem -0.875rem black;
+  border-radius: 0.5rem;
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
+}
+.donation .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.donation .about .title {
+  font-size: 1.125rem;
+}
+.donation .about .par {
+  color: hsl(0, 0%, 48%);
+}
+.donation .reward_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.donation .reward_list .reward {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(0, 0%, 84%);
+  border-radius: 0.5rem;
+}
+.donation .reward_list .reward .reward_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+.donation .reward_list .reward .reward_header .header_pledge {
+  color: hsl(176, 50%, 47%);
+  font-weight: 500;
+}
+
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */
