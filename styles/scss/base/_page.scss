@@ -32,6 +32,9 @@ body {
 
     @media screen and (min-width: 425px) {
         background-image:url(../../../images/image-hero-desktop.jpg);
+    }
+
+    @media screen and (min-width: 768px) {
         font-size: v.$fs;
     }
 }
@@ -44,6 +47,8 @@ main {
     @include m.flex-vertical($gap: 2rem);
     margin-block-start: 8.5rem;
     margin-inline: 1.5rem;
+    position: relative;
+    z-index: -2;
 
     @media screen and (min-width: 768px) {
         width: 45.5rem;

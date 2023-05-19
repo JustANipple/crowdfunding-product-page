@@ -8,6 +8,18 @@
     position: relative;
     width: 100%;
 
+    &.darkLayer::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 45rem;
+        background: linear-gradient(black, transparent);
+        opacity: 75%;
+        z-index: -1;
+    }
+
     //.bar_logo{}
 
     .bar_menu {
@@ -22,7 +34,7 @@
             border-radius: .5rem;
             position: absolute;
             top: 5rem;
-            left: 0;
+            left: 1.5rem;
             right: 0;
             margin-inline: auto 1.5rem;
             max-width: 20.75rem;
@@ -69,7 +81,7 @@
 @media screen and (min-width: 704px) {
     .nav_bar {
         padding-block: 3rem;
-        padding-inline: 10rem;
+        padding-inline: 10.5rem;
 
         .bar_menu {
 
@@ -81,6 +93,7 @@
                 color: white;
                 max-width: unset;
                 max-height: unset;
+                margin: 0;
 
                 .option {
                     padding: 0;

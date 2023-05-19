@@ -2,11 +2,11 @@
 @use "../abstracts/variables" as v;
 
 .donation {
-    @include m.flex-vertical($gap: 2.5rem);
+    @include m.flex-vertical($gap: 3rem);
     background-color: white;
     box-shadow: 0 0 .9rem -.875rem black;
     border-radius: .5rem;
-    padding-block: 2.5rem;
+    padding-block: 2.25rem;
     padding-inline: 1.5rem;
 
     .about {
@@ -22,7 +22,7 @@
     }
 
     .reward_list {
-        @include m.flex-vertical($gap: 1.5rem);
+        @include m.flex-vertical($gap: 1.75rem);
 
         .reward {
             @include m.flex-vertical($align-items: flex-start, $gap: 1rem);
@@ -38,6 +38,98 @@
                 .header_pledge {
                     color: v.$btn-clr;
                     font-weight: v.$fw-medium;
+                }
+            }
+
+            .reward_description {
+                color: v.$par-clr;
+                line-height: 1.75;
+            }
+
+            .reward_footer {
+                @include m.flex-vertical($align-items: flex-start, $gap: 1.25rem);
+
+                .footer_rewards {
+                    @include m.flex-horizontal($gap: .5rem);
+
+                    .rewards_left {
+                        font-weight: v.$fw-bold;
+                        font-size: calc(v.$fs * 2);
+                    }
+
+                    .rewards_text {
+                        color: v.$par-clr;
+                        position: relative;
+                        top: .125rem;
+                    }
+                }
+
+                .footer_confirm_btn {
+                    background-color: v.$btn-clr;
+                    border: none;
+                    border-radius: 100vw;
+                    color: white;
+                    font-weight: v.$fw-medium;
+                    padding: .85rem 2rem;
+                    width: 10rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .donation {
+        padding: 3rem;
+        gap: 2.5rem;
+
+        .about {
+            
+            .title {
+                font-size: calc(v.$fs * 1.25);
+            }
+
+            .par {
+                line-height: 1.875;
+            }
+        }
+
+        .reward_list {
+
+            .reward {
+                padding: 2rem;
+                gap: 1.5rem;
+                
+                .reward_header {
+                    @include m.flex-horizontal($justify-content: space-between);
+                    width: 100%;
+
+                    .header_title{
+                        font-size: calc(v.$fs * 1.125);
+                    }
+
+                    .header_pledge {
+                        font-size: calc(v.$fs / 1.125);
+                    }
+                }
+
+                .reward_footer {
+                    @include m.flex-horizontal($justify-content: space-between);
+                    width: 100%;
+                    
+                    .footer_confirm_btn {
+                        font-size: calc(v.$fs / 1.125);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .reward:nth-child(3) {
+                opacity: 40%;
+
+                .footer_confirm_btn {
+                    background-color: v.$par-clr;
+                    cursor: unset;
                 }
             }
         }

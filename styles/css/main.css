@@ -32,6 +32,10 @@ body::before {
 @media screen and (min-width: 425px) {
   body {
     background-image: url(../../../images/image-hero-desktop.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
     font-size: 1rem;
   }
 }
@@ -52,6 +56,8 @@ main {
   gap: 2rem;
   margin-block-start: 8.5rem;
   margin-inline: 1.5rem;
+  position: relative;
+  z-index: -2;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -105,6 +111,17 @@ p, h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
 }
+.nav_bar.darkLayer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 45rem;
+  background: linear-gradient(black, transparent);
+  opacity: 75%;
+  z-index: -1;
+}
 .nav_bar .bar_menu {
   display: flex;
   flex-direction: row;
@@ -125,7 +142,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 0.5rem;
   position: absolute;
   top: 5rem;
-  left: 0;
+  left: 1.5rem;
   right: 0;
   margin-inline: auto 1.5rem;
   max-width: 20.75rem;
@@ -160,7 +177,7 @@ p, h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 704px) {
   .nav_bar {
     padding-block: 3rem;
-    padding-inline: 10rem;
+    padding-inline: 10.5rem;
   }
   .nav_bar .bar_menu .menu_options {
     display: flex;
@@ -174,6 +191,7 @@ p, h1, h2, h3, h4, h5, h6 {
     color: white;
     max-width: unset;
     max-height: unset;
+    margin: 0;
   }
   .nav_bar .bar_menu .menu_options .option {
     padding: 0;
@@ -382,11 +400,11 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
   background-color: white;
   box-shadow: 0 0 0.9rem -0.875rem black;
   border-radius: 0.5rem;
-  padding-block: 2.5rem;
+  padding-block: 2.25rem;
   padding-inline: 1.5rem;
 }
 .donation .about {
@@ -407,7 +425,7 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 .donation .reward_list .reward {
   display: flex;
@@ -430,6 +448,91 @@ p, h1, h2, h3, h4, h5, h6 {
   color: hsl(176, 50%, 47%);
   font-weight: 500;
 }
+.donation .reward_list .reward .reward_description {
+  color: hsl(0, 0%, 48%);
+  line-height: 1.75;
+}
+.donation .reward_list .reward .reward_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.donation .reward_list .reward .reward_footer .footer_rewards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.donation .reward_list .reward .reward_footer .footer_rewards .rewards_left {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.donation .reward_list .reward .reward_footer .footer_rewards .rewards_text {
+  color: hsl(0, 0%, 48%);
+  position: relative;
+  top: 0.125rem;
+}
+.donation .reward_list .reward .reward_footer .footer_confirm_btn {
+  background-color: hsl(176, 50%, 47%);
+  border: none;
+  border-radius: 100vw;
+  color: white;
+  font-weight: 500;
+  padding: 0.85rem 2rem;
+  width: 10rem;
+}
 
+@media screen and (min-width: 768px) {
+  .donation {
+    padding: 3rem;
+    gap: 2.5rem;
+  }
+  .donation .about .title {
+    font-size: 1.25rem;
+  }
+  .donation .about .par {
+    line-height: 1.875;
+  }
+  .donation .reward_list .reward {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  .donation .reward_list .reward .reward_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+  .donation .reward_list .reward .reward_header .header_title {
+    font-size: 1.125rem;
+  }
+  .donation .reward_list .reward .reward_header .header_pledge {
+    font-size: 0.8888888889rem;
+  }
+  .donation .reward_list .reward .reward_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+  .donation .reward_list .reward .reward_footer .footer_confirm_btn {
+    font-size: 0.8888888889rem;
+    cursor: pointer;
+  }
+  .donation .reward_list .reward:nth-child(3) {
+    opacity: 40%;
+  }
+  .donation .reward_list .reward:nth-child(3) .footer_confirm_btn {
+    background-color: hsl(0, 0%, 48%);
+    cursor: unset;
+  }
+}
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */
