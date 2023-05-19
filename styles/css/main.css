@@ -56,7 +56,7 @@ main {
 @media screen and (min-width: 768px) {
   main {
     width: 45.5rem;
-    margin-block-start: 10rem;
+    margin-block-start: 10.5rem;
   }
 }
 
@@ -229,7 +229,7 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 0;
+  gap: 0.5rem;
   width: 100%;
 }
 .crowdfund_header .header_buttons button {
@@ -242,8 +242,9 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: hsl(176, 50%, 47%);
   color: white;
   padding-block: 1rem;
-  padding-inline: 2.75rem;
   font-weight: 500;
+  width: 100%;
+  max-width: 12.5rem;
 }
 .crowdfund_header .header_buttons .button_bookmark {
   display: flex;
@@ -317,6 +318,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .progression .progression_stat .stat_block .block_value {
   font-size: 2rem;
   font-weight: 700;
+  width: 100%;
 }
 .progression .progression_stat .stat_block .block_text {
   color: hsl(0, 0%, 48%);
@@ -336,5 +338,44 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: hsl(176, 50%, 47%);
 }
 
+@media screen and (min-width: 768px) {
+  .progression {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+  }
+  .progression .progression_stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+  .progression .progression_stat .stat_block {
+    padding-block: 0;
+    padding-inline: 2.25rem;
+    text-align: left;
+    flex: 1;
+  }
+  .progression .progression_stat .stat_block:nth-child(1) {
+    padding-block: 0;
+    padding-inline: 0 2.5rem;
+  }
+  .progression .progression_stat .stat_block:not(:last-child)::after {
+    border-bottom: unset;
+    border-right: 1px solid hsl(0, 0%, 84%);
+    left: unset;
+    top: 0;
+    right: 0;
+    height: 4rem;
+  }
+  .progression .progression_stat .stat_block .block_text {
+    width: 100%;
+  }
+}
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */

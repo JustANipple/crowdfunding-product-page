@@ -37,6 +37,7 @@
             .block_value {
                 font-size: calc(v.$fs * 2);
                 font-weight: v.$fw-bold;
+                width: 100%;
             }
 
             .block_text {
@@ -61,6 +62,45 @@
 
         &::-webkit-progress-value {
             background-color: v.$btn-clr;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .progression {
+        @include m.flex-vertical($align-items: flex-start, $gap: 2rem);
+        padding: 2.5rem 3rem;
+
+        .progression_stat {
+            @include m.flex-horizontal();
+            width: 100%;
+
+            .stat_block {
+                padding-block: 0;
+                padding-inline: 2.25rem;
+                text-align: left;
+                flex: 1;
+
+                &:nth-child(1) {
+                    padding-block: 0;
+                    padding-inline: 0 2.5rem;
+                }
+
+                &:not(:last-child)::after {
+                    border-bottom: unset;
+                    border-right: 1px solid v.$stat-border-clr;
+                    left: unset;
+                    top: 0;
+                    right: 0;
+                    height: 4rem;
+                }
+
+                //.block_value {}
+
+                .block_text {
+                    width: 100%;
+                }
+            }
         }
     }
 }

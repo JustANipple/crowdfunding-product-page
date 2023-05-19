@@ -8,7 +8,6 @@
     padding-block: 3.5rem 2.5rem;
     padding-inline: 1.5rem;
     position: relative;
-
     box-shadow: 0 0 .9rem -.875rem black;
 
     &::before {
@@ -37,7 +36,7 @@
     }
 
     .header_buttons {
-        @include m.flex-horizontal($justify-content: space-between);
+        @include m.flex-horizontal($justify-content: space-between, $gap: .5rem);
         width: 100%;
 
         button {
@@ -51,8 +50,9 @@
             background-color: v.$btn-clr;
             color: white;
             padding-block: 1rem;
-            padding-inline: 2.75rem;
             font-weight: v.$fw-medium;
+            width: 100%;
+            max-width: 12.5rem;
         }
 
         .button_bookmark {
