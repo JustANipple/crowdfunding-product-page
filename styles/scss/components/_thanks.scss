@@ -1,0 +1,42 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.thanksgiving {
+    @include m.flex-vertical($gap: 2rem);
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: white;
+    margin-inline: 1.5rem;
+    padding: 2.25rem 1.5rem;
+    border-radius: .5rem;
+    
+    display: none;
+
+    //check_icon{}
+
+    .thanksgiving_text {
+        @include m.flex-vertical($gap: 1.5rem);
+        text-align: center;
+
+        .text_title {
+            font-size: calc(v.$fs * 1.125);
+            font-weight: v.$fw-bold;
+        }
+
+        .text_par {
+            color: v.$par-clr;
+        }
+    }
+
+    .thanksgiving_continue {
+        border: none;
+        background-color: v.$btn-clr;
+        color: white;
+        padding: .75rem 2rem;
+        border-radius: 100vw;
+        font-weight: v.$fw-medium;
+    }
+}

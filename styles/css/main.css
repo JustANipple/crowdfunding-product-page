@@ -33,6 +33,15 @@ body {
   }
 }
 
+.dark_overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .sr_only {
   color: transparent;
   position: absolute;
@@ -554,5 +563,46 @@ p, h1, h2, h3, h4, h5, h6 {
     cursor: unset;
   }
 }
+.thanksgiving {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: white;
+  margin-inline: 1.5rem;
+  padding: 2.25rem 1.5rem;
+  border-radius: 0.5rem;
+  display: none;
+}
+.thanksgiving .thanksgiving_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.thanksgiving .thanksgiving_text .text_title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.thanksgiving .thanksgiving_text .text_par {
+  color: hsl(0, 0%, 48%);
+}
+.thanksgiving .thanksgiving_continue {
+  border: none;
+  background-color: hsl(176, 50%, 47%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 100vw;
+  font-weight: 500;
+}
+
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */

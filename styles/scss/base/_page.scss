@@ -31,6 +31,15 @@ body {
     }
 }
 
+.dark_overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .sr_only {
     @include m.srOnlyTitle();
 }

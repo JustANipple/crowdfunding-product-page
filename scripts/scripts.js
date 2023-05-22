@@ -49,4 +49,3 @@ bookmarkBtn.addEventListener("click", () => {
         bookmarkText.textContent = "Bookmarked";
     }
 });
-
