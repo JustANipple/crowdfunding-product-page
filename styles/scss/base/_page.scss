@@ -5,6 +5,8 @@ body {
     @include m.flex-vertical($gap: 1.5rem);
     font-family: v.$ff;
     font-size: calc(v.$fs / 1.125);
+    position: relative;
+    z-index: -3;
 
     /* background shorthand
     background: 
@@ -38,7 +40,7 @@ main {
     margin-block-start: 8.5rem;
     margin-inline: 1.5rem;
     position: relative;
-    z-index: 0;
+    z-index: -2;
 
     @media screen and (min-width: 768px) {
         width: 45.5rem;

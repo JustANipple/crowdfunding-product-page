@@ -120,6 +120,10 @@
                     .footer_confirm_btn {
                         font-size: calc(v.$fs / 1.125);
                         cursor: pointer;
+
+                        &:hover {
+                            background-color: v.$btn-active-clr;
+                        }
                     }
                 }
             }

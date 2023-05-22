@@ -61,6 +61,18 @@
             overflow: hidden;
             max-width: 3.5rem;
             color: v.$par-clr;
+
+            .bookmark_text {
+                display: none;
+            }
+
+            svg g .bookmarkedCircle {
+                fill: v.$btn-active-clr;
+            }
+
+            svg g .bookmarkedPath {
+                fill: white;
+            }
         }
     }
 }
@@ -91,10 +103,18 @@
                 $padding: 1rem;
                 padding-inline-end: $padding;
                 gap: $padding;
-                max-width: 11rem;
+                max-width: 12rem;
 
                 &:hover {
                     cursor: pointer;
+                }
+
+                .bookmarkedText {
+                    color: v.$btn-active-clr;
+                }
+
+                .bookmark_text {
+                    display: block;
                 }
             }
         }
