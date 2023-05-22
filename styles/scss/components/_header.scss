@@ -84,6 +84,7 @@
 
             .button_back_project:hover {
                 cursor: pointer;
+                background-color: v.$btn-active-clr;
             }
     
             .button_bookmark {
@@ -91,6 +92,10 @@
                 padding-inline-end: $padding;
                 gap: $padding;
                 max-width: 11rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

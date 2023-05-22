@@ -142,6 +142,8 @@ p, h1, h2, h3, h4, h5, h6 {
   background-blend-mode: darken;
 }
 .nav_bar .bar_menu .menu_options .option {
+  text-decoration: none;
+  color: inherit;
   padding: 1.375rem;
   position: relative;
   width: 100%;
@@ -279,11 +281,15 @@ p, h1, h2, h3, h4, h5, h6 {
   }
   .crowdfund_header .header_buttons .button_back_project:hover {
     cursor: pointer;
+    background-color: hsl(176, 72%, 28%);
   }
   .crowdfund_header .header_buttons .button_bookmark {
     padding-inline-end: 1rem;
     gap: 1rem;
     max-width: 11rem;
+  }
+  .crowdfund_header .header_buttons .button_bookmark:hover {
+    cursor: pointer;
   }
 }
 .progression {
