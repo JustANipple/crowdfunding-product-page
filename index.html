@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body> <!--dark_overlay class for popups-->
+<body class="dark_overlay"> <!--dark_overlay class for popups-->
 
   <h1 class="sr_only">Crowdfunding product page</h1>
 
@@ -160,15 +160,50 @@
     <button class="thanksgiving_continue">Got it!</button>
   </section>
 
+  <!-- Back this project popup -->
+  <section class="back_project">
+    <h2 class="sr_only">Back this project</h2>
+    <div class="back_header">
+      <h2 class="title">Back this project</h2>
+      <img 
+      src="images/icon-close-modal.svg" 
+      alt=""
+      aria-hidden="true"
+      class="close_icon">
+    </div>
+    <p class="back_desc">
+      Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+    </p>
+
+    <div class="reward_choices">
+
+      <div class="reward">
+        <div class="choice">
+          <div class="choice_type">
+            <input type="radio" id="rewardRadio" name="rewardType">
+            <label for="no_reward" class="type_label">Pledge with no reward</label>
+          </div>
+          <p class="choice_desc">
+            Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.
+          </p>
+        </div>
+        <div class="pledge">
+          <p class="pledge_text">Confirm your pledge</p>
+          <button class="confirm">Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 
   <!-- Selection modal start -->
 
   Back this project
-  Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+
 
   Pledge with no reward
-  Choose to support us without a reward if you simply believe in our project. As a backer, 
-  you will be signed up to receive product updates via email.
+
 
   Bamboo Stand
   Pledge $25 or more

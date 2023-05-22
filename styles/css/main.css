@@ -578,6 +578,8 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-inline: 1.5rem;
   padding: 2.25rem 1.5rem;
   border-radius: 0.5rem;
+  max-width: 33.75rem;
+  margin-inline: 1.5rem;
   display: none;
 }
 .thanksgiving .thanksgiving_text {
@@ -601,6 +603,145 @@ p, h1, h2, h3, h4, h5, h6 {
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 100vw;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 592px) {
+  .thanksgiving {
+    gap: 3rem;
+    padding: 3rem;
+    margin-inline: auto;
+  }
+  .thanksgiving .check_icon {
+    width: 5.5rem;
+  }
+  .thanksgiving .thanksgiving_text {
+    gap: 1rem;
+  }
+  .thanksgiving .thanksgiving_text .text_title {
+    font-size: 1.5rem;
+  }
+  .thanksgiving_continue {
+    font-size: 0.8888888889rem;
+  }
+  .thanksgiving_continue:hover {
+    background-color: hsl(176, 72%, 28%);
+  }
+}
+.back_project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: unset;
+  gap: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-85%);
+  background-color: white;
+  padding-block: 2rem;
+  padding-inline: 1.5rem;
+  margin-inline: 1.5rem;
+  border-radius: 0.5rem;
+}
+.back_project .back_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.back_project .back_header .title {
+  font-size: 1.25rem;
+}
+.back_project .back_desc {
+  color: hsl(0, 0%, 48%);
+}
+.back_project .reward_choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.back_project .reward_choices .reward {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: unset;
+  gap: 0;
+  border: 1px solid hsl(0, 0%, 84%);
+  border-radius: 0.5rem;
+}
+.back_project .reward_choices .reward .choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: unset;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+.back_project .reward_choices .reward .choice .choice_type {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.back_project .reward_choices .reward .choice .choice_type #rewardRadio {
+  /* The native appearance is hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  /* For a circular appearance we need a border-radius. */
+  border-radius: 100vw;
+  /* The background will be the radio dot's color. */
+  background: transparent;
+  /* The border will be the spacing between the dot and the outer circle */
+  border: 5px solid white;
+  /* And by creating a box-shadow with no offset and no blur, we have an outer circle */
+  box-shadow: 0 0 0 1px hsl(0, 0%, 84%);
+  padding: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.back_project .reward_choices .reward .choice .choice_type #rewardRadio:checked::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: hsl(176, 50%, 47%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.back_project .reward_choices .reward .choice .choice_type .type_label {
+  font-weight: 700;
+}
+.back_project .reward_choices .reward .choice .choice_desc {
+  color: hsl(0, 0%, 48%);
+}
+.back_project .reward_choices .reward .pledge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  border-top: 2px solid hsl(0, 0%, 92%);
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+  border: 0;
+}
+.back_project .reward_choices .reward .pledge .pledge_text {
+  color: hsl(0, 0%, 48%);
+}
+.back_project .reward_choices .reward .pledge .confirm {
+  border: none;
+  background-color: hsl(176, 50%, 47%);
+  padding: 0.875rem 1.75rem;
+  border-radius: 100vw;
+  color: white;
   font-weight: 500;
 }
 
