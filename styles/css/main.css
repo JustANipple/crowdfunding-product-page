@@ -634,16 +634,17 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: unset;
   gap: 1.5rem;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  transform: translateY(-85%);
   background-color: white;
   padding-block: 2rem;
   padding-inline: 1.5rem;
+  margin-block: 7.5rem;
   margin-inline: 1.5rem;
   border-radius: 0.5rem;
+  display: none;
 }
 .back_project .back_header {
   display: flex;
@@ -680,7 +681,7 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: unset;
   gap: 1.5rem;
-  padding: 2rem 1.5rem;
+  padding: 1.75rem 1.5rem;
 }
 .back_project .reward_choices .reward .choice .choice_type {
   display: flex;
@@ -714,11 +715,38 @@ p, h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
 }
-.back_project .reward_choices .reward .choice .choice_type .type_label {
+.back_project .reward_choices .reward .choice .choice_type .label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+.back_project .reward_choices .reward .choice .choice_type .label .type_label {
   font-weight: 700;
+}
+.back_project .reward_choices .reward .choice .choice_type .label .pledge_price {
+  color: hsl(176, 50%, 47%);
+  font-weight: 500;
 }
 .back_project .reward_choices .reward .choice .choice_desc {
   color: hsl(0, 0%, 48%);
+}
+.back_project .reward_choices .reward .choice .rewards_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+.back_project .reward_choices .reward .choice .rewards_left .left_value {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.back_project .reward_choices .reward .choice .rewards_left .left_text {
+  color: hsl(0, 0%, 48%);
+  font-weight: 500;
 }
 .back_project .reward_choices .reward .pledge {
   display: flex;
@@ -726,23 +754,66 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 2rem 1.5rem;
+  padding: 1.75rem 1.5rem;
   border-top: 2px solid hsl(0, 0%, 92%);
   overflow: hidden;
+  /*
   height: 0;
   padding: 0;
   border: 0;
+  */
 }
 .back_project .reward_choices .reward .pledge .pledge_text {
   color: hsl(0, 0%, 48%);
 }
-.back_project .reward_choices .reward .pledge .confirm {
+.back_project .reward_choices .reward .pledge .pledge_insertion {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.back_project .reward_choices .reward .pledge .pledge_insertion .dollar_symbol {
+  position: absolute;
+  padding-inline-start: 1.5rem;
+  margin-block-end: 0.125rem;
+  color: hsl(0, 0%, 84%);
+  font-weight: 700;
+}
+.back_project .reward_choices .reward .pledge .pledge_insertion .insertion_input {
+  max-width: unset;
+  border-radius: 100vw;
+  border: 1px solid hsl(0, 0%, 84%);
+  width: 6.25rem;
+  padding-block: 0.75rem;
+  outline: none;
+  text-align: center;
+  font-weight: 700;
+}
+.back_project .reward_choices .reward .pledge .pledge_insertion .insertion_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.back_project .reward_choices .reward .pledge .pledge_insertion .insertion_confirm {
   border: none;
   background-color: hsl(176, 50%, 47%);
   padding: 0.875rem 1.75rem;
   border-radius: 100vw;
   color: white;
   font-weight: 500;
+}
+
+.reward {
+  position: absolute;
+  border-radius: 0.5rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  margin-block: 7.5rem;
+  margin-inline: 1.5rem;
 }
 
 /* Abstracts */

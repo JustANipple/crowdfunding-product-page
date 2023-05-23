@@ -3,16 +3,18 @@
 
 .back_project {
     @include m.flex-vertical($gap: 1.5rem, $align-items: unset);
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    transform: translateY(-85%);
     background-color: white;
     padding-block: 2rem;
     padding-inline: 1.5rem;
+    margin-block: 7.5rem;
     margin-inline: 1.5rem;
     border-radius: .5rem;
+
+    display: none;
 
     .back_header {
         @include m.flex-horizontal($justify-content: space-between);
@@ -32,7 +34,7 @@
         @include m.flex-vertical($gap: 1.5rem);
 
         .reward {
-            $padBlock: 2rem;
+            $padBlock: 1.75rem;
             $padInline: 1.5rem;
             @include m.flex-vertical($align-items: unset);
             border: 1px solid v.$stat-border-clr;
@@ -74,13 +76,37 @@
                         }
                     }
 
-                    .type_label {
-                        font-weight: v.$fw-bold;
+                    .label {
+                        @include m.flex-vertical($gap: .25rem, $align-items: flex-start);
+
+                        .type_label {
+                            font-weight: v.$fw-bold;
+                        }
+
+                        .pledge_price {
+                            color: v.$btn-clr;
+                            font-weight: v.$fw-medium;
+                        }
                     }
                 }
 
                 .choice_desc {
                     color: v.$par-clr;
+                }
+
+                .rewards_left {
+                    @include m.flex-horizontal($gap: .5rem);
+                    line-height: 1;
+
+                    .left_value {
+                        font-weight: v.$fw-bold;
+                        font-size: calc(v.$fs * 1.125);
+                    }
+
+                    .left_text {
+                        color: v.$par-clr;
+                        font-weight: v.$fw-medium;
+                    }
                 }
             }
 
@@ -90,21 +116,53 @@
                 border-top: 2px solid v.$dropdown-line-clr;
                 overflow: hidden;
 
+                /*
                 height: 0;
                 padding: 0;
                 border: 0;
+                */
+
 
                 .pledge_text {
                     color: v.$par-clr;
                 }
 
-                .confirm {
-                    border: none;
-                    background-color: v.$btn-clr;
-                    padding: .875rem 1.75rem;
-                    border-radius: 100vw;
-                    color: white;
-                    font-weight: v.$fw-medium;
+                .pledge_insertion {
+                    @include m.flex-horizontal($gap: 1rem);
+                    position: relative;
+
+                    .dollar_symbol {
+                        position: absolute;
+                        padding-inline-start: 1.5rem;
+                        margin-block-end: .125rem;
+                        color: v.$stat-border-clr;
+                        font-weight: v.$fw-bold;
+                    }
+
+                    .insertion_input {
+                        max-width: unset;
+                        border-radius: 100vw;
+                        border: 1px solid v.$stat-border-clr;
+                        width: 6.25rem;     
+                        padding-block: .75rem;
+                        outline: none;  
+                        text-align: center;
+                        font-weight: v.$fw-bold;
+                        
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+
+                    .insertion_confirm {
+                        border: none;
+                        background-color: v.$btn-clr;
+                        padding: .875rem 1.75rem;
+                        border-radius: 100vw;
+                        color: white;
+                        font-weight: v.$fw-medium;
+                    }
                 }
             }
         }

@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.reward {
+    position: absolute;
+    border-radius: .5rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;    
+    margin-block: 7.5rem;
+    margin-inline: 1.5rem;
+}
