@@ -8,16 +8,8 @@ $padInine: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1.5rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: white;  
     border-radius: .5rem;
-    margin-block: 7.5rem;
-    margin-inline: 1.5rem;
 
         .option {
         border: 1px solid v.$stat-border-clr;
@@ -26,7 +18,7 @@ $padInine: 1.5rem;
         .reward {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             padding-block: $padBlock;
             padding-inline: $padInine;
     
@@ -50,6 +42,9 @@ $padInine: 1.5rem;
                     padding: 6px;
                     position: relative;
                     overflow: hidden;
+
+                    // Default appearance
+                    display: none;
     
                     &:checked::before {
                         content: "";
@@ -90,7 +85,7 @@ $padInine: 1.5rem;
                 color: v.$par-clr;
 
                 .left_amount {
-                    font-size: calc(v.$fs * 1.125);
+                    font-size: calc(v.$fs * 2);
                     font-weight: v.$fw-bold;
                     color: black;
                 }
@@ -104,6 +99,11 @@ $padInine: 1.5rem;
                 border-radius: 100vw;
                 padding-block: .875rem;
                 font-weight: v.$fw-medium;
+                cursor: pointer;
+            }
+
+            .outOfStock {
+                background-color: v.$par-clr;
             }
         }
 
@@ -114,6 +114,12 @@ $padInine: 1.5rem;
             gap: 1rem;
             padding: 1.5rem;
             border-top: 2px solid v.$dropdown-line-clr;
+            overflow: hidden;
+
+            /* Default appearance */
+            max-height: 0;
+            padding: 0;
+            border: none;
 
             .pledge_title {
                 color: v.$par-clr;

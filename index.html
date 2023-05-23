@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="dark_overlay"> <!--dark_overlay class for popups-->
+<body> <!--dark_overlay class for popups-->
 
   <h1 class="sr_only">Crowdfunding product page</h1>
 
@@ -89,58 +89,7 @@
         </p>
       </div>
 
-      <div class="reward_list">
-        <div class="reward">
-          <div class="reward_header">
-            <h4 class="header_title">Bamboo Stand</h4>
-            <p class="header_pledge">Pledge $25 or more</p>
-          </div>
-          <p class="reward_description">
-            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-          </p>
-          <div class="reward_footer">
-            <div class="footer_rewards">
-              <p class="rewards_left">101</p>
-              <p class="rewards_text">left</p>
-            </div> 
-            <button class="footer_confirm_btn">Select Reward</button>
-          </div>
-        </div>
-
-        <div class="reward">
-          <div class="reward_header">
-            <h4 class="header_title">Black Edition Stand</h4>
-            <p class="header_pledge">Pledge $75 or more</p>
-          </div>
-          <p class="reward_description">
-            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-          </p>
-          <div class="reward_footer">
-            <div class="footer_rewards">
-              <p class="rewards_left">64</p>
-              <p class="rewards_text">left</p>
-            </div> 
-            <button class="footer_confirm_btn">Select Reward</button>
-          </div>
-        </div>
-
-        <div class="reward">
-          <div class="reward_header">
-            <h4 class="header_title">Mahogany Special Edition</h4>
-            <p class="header_pledge">Pledge $200 or more</p>
-          </div>
-          <p class="reward_description">
-            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-          </p>
-          <div class="reward_footer">
-            <div class="footer_rewards">
-              <p class="rewards_left">0</p>
-              <p class="rewards_text">left</p>
-            </div> 
-            <button class="footer_confirm_btn">Out of Stock</button>
-          </div>
-        </div>
-      </div>
+      <div class="rewards"></div>
     </div>
 
   </main>
@@ -176,144 +125,8 @@
       Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
     </p>
 
-    <div class="reward_choices">
-      <!-- No reward -->
-      <div class="reward">
-        <div class="choice">
-          <div class="choice_type">
-            <input type="radio" id="rewardRadio" name="rewardType">
-            <div class="label">
-              <p class="type_label">Pledge with no reward</p>
-            </div>
-          </div>
-          <p class="choice_desc">
-            Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.
-          </p>
-        </div>
-        <div class="pledge">
-          <p class="pledge_text">Confirm your pledge</p>
-          <div class="pledge_insertion">
-            <button class="insertion_confirm">Continue</button>
-          </div>
-          
-        </div>
-      </div>
-      <!-- Bamboo stand -->
-      <div class="reward">
-        <div class="choice">
-          <div class="choice_type">
-            <input type="radio" id="rewardRadio" name="rewardType">
-            <div class="label">
-              <p class="type_label">Bamboo stand</p>
-              <p class="pledge_price">Pledge $25 or more</p>
-            </div>
-          </div>
-          <p class="choice_desc">
-            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-          </p>
-          <div class="rewards_left">
-            <p class="left_value">101</p>
-            <p class="left_text">left</p>
-          </div>
-        </div>
-        <div class="pledge">
-          <p class="pledge_text">Enter your pledge</p>
-          <div class="pledge_insertion">
-            <label for="rewardRadio" class="dollar_symbol">$</label>
-            <input type="number" class="insertion_input">
-            <button class="insertion_confirm">Continue</button>
-          </div>
-        </div>
-      </div>
-      <!-- Black edition stand -->
-      <div class="reward">
-        <div class="choice">
-          <div class="choice_type">
-            <input type="radio" id="rewardRadio" name="rewardType">
-            <div class="label">
-              <p class="type_label">Black Edition Stand</p>
-              <p class="pledge_price">Pledge $75 or more</p>
-            </div>
-          </div>
-          <p class="choice_desc">
-            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-          </p>
-          <div class="rewards_left">
-            <p class="left_value">64</p>
-            <p class="left_text">left</p>
-          </div>
-        </div>
-        <div class="pledge">
-          <p class="pledge_text">Enter your pledge</p>
-          <div class="pledge_insertion">
-            <label for="rewardRadio" class="dollar_symbol">$</label>
-            <input type="number" class="insertion_input">
-            <button class="insertion_confirm">Continue</button>
-          </div>
-        </div>
-      </div>
-      <!-- Mahogany special edition -->
-      <div class="reward">
-        <div class="choice">
-          <div class="choice_type">
-            <input type="radio" id="rewardRadio" name="rewardType">
-            <div class="label">
-              <p class="type_label">Mahogany Special Edition</p>
-              <p class="pledge_price">Pledge $200 or more</p>
-            </div>
-          </div>
-          <p class="choice_desc">
-            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-          </p>
-          <div class="rewards_left">
-            <p class="left_value">0</p>
-            <p class="left_text">left</p>
-          </div>
-        </div>
-        <div class="pledge">
-          <p class="pledge_text">Enter your pledge</p>
-          <div class="pledge_insertion">
-            <label for="rewardRadio" class="dollar_symbol">$</label>
-            <input type="number" class="insertion_input">
-            <button class="insertion_confirm">Continue</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="rewards"></div>
   </section>
-
-  <!------------------------------------------------------->
-  <div class="rewards">
-    
-    <div class="option">
-      <div class="reward">
-        <div class="reward_header">
-          <input type="radio" class="header_radio" name="radioBtn">
-          <div class="header_block">
-            <p class="reward_type">Bamboo Stand</p>
-            <p class="reward_price">Pledge $<span class="price_value">25</span> or more </p>
-          </div>
-        </div>
-        <p class="reward_description">
-          You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.
-        </p>
-        <p class="reward_left"> 
-          <span class="left_amount">101</span> left
-        </p>
-        <button class="reward_btn">Select Reward</button>
-      </div>
-  
-      <div class="pledge">
-        <p class="pledge_title">Enter your pledge</p>
-        <div class="pledge_insertion">
-          <label for="price" class="insertion_label">$</label>
-          <input type="number" id="price" class="insertion_input">
-          <button class="inseriton_btn">Continue</button>
-        </div>
-      </div>
-    </div>
-    
-  </div>
 
 </body>
 </html>
