@@ -1,14 +1,164 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 
-.reward {
+$padBlock: 1.5rem;
+$padInine: 1.5rem;
+
+.rewards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
     position: absolute;
-    border-radius: .5rem;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: white;    
+    background-color: white;  
+    border-radius: .5rem;
     margin-block: 7.5rem;
     margin-inline: 1.5rem;
+
+        .option {
+        border: 1px solid v.$stat-border-clr;
+        border-radius: .5rem;
+
+        .reward {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-block: $padBlock;
+            padding-inline: $padInine;
+    
+            .reward_header {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+    
+                .header_radio {
+                    /* The native appearance is hidden */
+                    appearance: none;
+                    -webkit-appearance: none;
+                    /* For a circular appearance we need a border-radius. */
+                    border-radius: 100vw;
+                    /* The background will be the radio dot's color. */
+                    background: transparent;
+                    /* The border will be the spacing between the dot and the outer circle */
+                    border: 5px solid white;
+                    /* And by creating a box-shadow with no offset and no blur, we have an outer circle */
+                    box-shadow: 0 0 0 1px v.$stat-border-clr;
+                    padding: 6px;
+                    position: relative;
+                    overflow: hidden;
+    
+                    &:checked::before {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        background-color: v.$btn-clr;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+    
+                .header_block {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .25rem;
+    
+                    .reward_type {
+                        font-weight: v.$fw-bold;
+                    }
+    
+                    .reward_price {
+                        font-weight: v.$fw-medium;
+                        color: v.$btn-clr;
+                    }
+                }
+            }
+    
+            .reward_description {
+                color: v.$par-clr;
+                line-height: 1.75;
+            }
+
+            .reward_left {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                color: v.$par-clr;
+
+                .left_amount {
+                    font-size: calc(v.$fs * 1.125);
+                    font-weight: v.$fw-bold;
+                    color: black;
+                }
+            }
+
+            .reward_btn {
+                border: none;
+                background-color: v.$btn-clr;
+                color: white;
+                width: 10rem;
+                border-radius: 100vw;
+                padding-block: .875rem;
+                font-weight: v.$fw-medium;
+            }
+        }
+
+        .pledge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-top: 2px solid v.$dropdown-line-clr;
+
+            .pledge_title {
+                color: v.$par-clr;
+            }
+
+            .pledge_insertion {
+                display: flex;
+                gap: 1rem;
+                position: relative;
+
+                .insertion_label {
+                    position: absolute;
+                    left: 1.5rem;
+                    top: 0;
+                    bottom: 0;
+                    height: fit-content;
+                    margin-block: auto;
+                    color: v.$stat-border-clr;
+                    font-weight: v.$fw-bold;
+                }
+
+                .insertion_input {
+                    font-weight: v.$fw-bold;
+                    border: 1px solid v.$stat-border-clr;
+                    border-radius: 100vw;
+                    max-width: 6.25rem;
+                    padding-block: .675rem .75rem;
+                    text-align: center;
+                    outline: none;
+
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                }
+
+                .inseriton_btn {
+                    border: none;
+                    background-color: v.$btn-clr;
+                    padding: .875rem 1.75rem;
+                    border-radius: 100vw;
+                    color: white;
+                    font-weight: v.$fw-medium;
+                }
+            }
+        }
+    }
 }

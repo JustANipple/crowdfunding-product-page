@@ -804,16 +804,144 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.reward {
+.rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
   position: absolute;
-  border-radius: 0.5rem;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: white;
+  border-radius: 0.5rem;
   margin-block: 7.5rem;
   margin-inline: 1.5rem;
+}
+.rewards .option {
+  border: 1px solid hsl(0, 0%, 84%);
+  border-radius: 0.5rem;
+}
+.rewards .option .reward {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}
+.rewards .option .reward .reward_header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.rewards .option .reward .reward_header .header_radio {
+  /* The native appearance is hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  /* For a circular appearance we need a border-radius. */
+  border-radius: 100vw;
+  /* The background will be the radio dot's color. */
+  background: transparent;
+  /* The border will be the spacing between the dot and the outer circle */
+  border: 5px solid white;
+  /* And by creating a box-shadow with no offset and no blur, we have an outer circle */
+  box-shadow: 0 0 0 1px hsl(0, 0%, 84%);
+  padding: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.rewards .option .reward .reward_header .header_radio:checked::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: hsl(176, 50%, 47%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rewards .option .reward .reward_header .header_block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.rewards .option .reward .reward_header .header_block .reward_type {
+  font-weight: 700;
+}
+.rewards .option .reward .reward_header .header_block .reward_price {
+  font-weight: 500;
+  color: hsl(176, 50%, 47%);
+}
+.rewards .option .reward .reward_description {
+  color: hsl(0, 0%, 48%);
+  line-height: 1.75;
+}
+.rewards .option .reward .reward_left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: hsl(0, 0%, 48%);
+}
+.rewards .option .reward .reward_left .left_amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: black;
+}
+.rewards .option .reward .reward_btn {
+  border: none;
+  background-color: hsl(176, 50%, 47%);
+  color: white;
+  width: 10rem;
+  border-radius: 100vw;
+  padding-block: 0.875rem;
+  font-weight: 500;
+}
+.rewards .option .pledge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 2px solid hsl(0, 0%, 92%);
+}
+.rewards .option .pledge .pledge_title {
+  color: hsl(0, 0%, 48%);
+}
+.rewards .option .pledge .pledge_insertion {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+.rewards .option .pledge .pledge_insertion .insertion_label {
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  height: fit-content;
+  margin-block: auto;
+  color: hsl(0, 0%, 84%);
+  font-weight: 700;
+}
+.rewards .option .pledge .pledge_insertion .insertion_input {
+  font-weight: 700;
+  border: 1px solid hsl(0, 0%, 84%);
+  border-radius: 100vw;
+  max-width: 6.25rem;
+  padding-block: 0.675rem 0.75rem;
+  text-align: center;
+  outline: none;
+}
+.rewards .option .pledge .pledge_insertion .insertion_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.rewards .option .pledge .pledge_insertion .inseriton_btn {
+  border: none;
+  background-color: hsl(176, 50%, 47%);
+  padding: 0.875rem 1.75rem;
+  border-radius: 100vw;
+  color: white;
+  font-weight: 500;
 }
 
 /* Abstracts */

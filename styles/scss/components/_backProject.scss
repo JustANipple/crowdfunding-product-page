@@ -39,7 +39,6 @@
             @include m.flex-vertical($align-items: unset);
             border: 1px solid v.$stat-border-clr;
             border-radius: .5rem;
-            
 
             .choice {
                 @include m.flex-vertical($gap: 1.5rem, $align-items: unset);
