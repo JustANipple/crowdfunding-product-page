@@ -15,6 +15,8 @@ $padInine: 1.5rem;
         border: 1px solid v.$stat-border-clr;
         border-radius: .5rem;
 
+
+
         .reward {
             display: flex;
             flex-direction: column;
@@ -115,11 +117,7 @@ $padInine: 1.5rem;
             padding: 1.5rem;
             border-top: 2px solid v.$dropdown-line-clr;
             overflow: hidden;
-
-            /* Default appearance */
-            max-height: 0;
-            padding: 0;
-            border: none;
+            max-height: 10rem;
 
             .pledge_title {
                 color: v.$par-clr;
@@ -166,5 +164,26 @@ $padInine: 1.5rem;
                 }
             }
         }
+
+        .unShow {
+            max-height: 0;
+            padding: 0;
+            border: none;
+        }
     }
+
+    .modal:nth-child(1) .reward {
+        gap: 2.5rem;
+    }
+
+    .modal .reward {
+
+        .reward_left {
+
+            .left_amount {
+                font-size: calc(v.$fs * 1.125);
+            }
+        }
+    }
+
 }

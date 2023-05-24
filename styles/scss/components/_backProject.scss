@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.back_project {
+    @include m.flex-vertical($align-items: flex-start, $gap: 1.5rem);
+    background-color: white;
+    position: absolute;
+    top: 7.5rem;
+    padding: 1.5rem;
+    margin-inline: 1.5rem;
+    border-radius: .5rem;
+    
+    display: none;
+
+    .back_header {
+        @include m.flex-horizontal($justify-content: space-between);
+        width: 100%;
+
+        .title {
+            font-size: calc(v.$fs * 1.125);
+        }
+    }
+
+    .back_desc {
+        color: v.$par-clr;
+    }
+}

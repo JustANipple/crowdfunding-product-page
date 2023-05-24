@@ -112,6 +112,18 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-inline: 1.5rem;
   width: 100%;
 }
+.nav_bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.375), transparent);
+  z-index: -1;
+  pointer-events: none;
+  max-height: 10rem;
+}
 .nav_bar.darkLayer::before {
   content: "";
   position: absolute;
@@ -725,10 +737,7 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
   border-top: 2px solid hsl(0, 0%, 92%);
   overflow: hidden;
-  /* Default appearance */
-  max-height: 0;
-  padding: 0;
-  border: none;
+  max-height: 10rem;
 }
 .rewards .option .pledge .pledge_title {
   color: hsl(0, 0%, 48%);
@@ -768,6 +777,46 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 100vw;
   color: white;
   font-weight: 500;
+}
+.rewards .option .unShow {
+  max-height: 0;
+  padding: 0;
+  border: none;
+}
+.rewards .modal:nth-child(1) .reward {
+  gap: 2.5rem;
+}
+.rewards .modal .reward .reward_left .left_amount {
+  font-size: 1.125rem;
+}
+
+.back_project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: white;
+  position: absolute;
+  top: 7.5rem;
+  padding: 1.5rem;
+  margin-inline: 1.5rem;
+  border-radius: 0.5rem;
+  display: none;
+}
+.back_project .back_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+.back_project .back_header .title {
+  font-size: 1.125rem;
+}
+.back_project .back_desc {
+  color: hsl(0, 0%, 48%);
 }
 
 /* Abstracts */
