@@ -129,10 +129,11 @@ for(const btn of selectBtn) {
 }
 
 function manageStats(input) {
+    //value entered
     donatedAmount = parseInt(input.value);
-    const backValues = document.querySelectorAll(".block_value");
-    const backedAmount = backValues[0].textContent.split("$")[1].replace(",","");
-    const backerAmount = backValues[1];
-    console.log(parseFloat(backedAmount));
-    backValues[0].textContent = `$${((backedAmount - donatedAmount) / 1000).toString.replace(".",",")}`;
+    //list of stats
+    const values = document.querySelectorAll(".block_value");
+    const currentBackedAmount = parseInt(values[0].textContent.split("$")[1].replace(",",""));
+    values[0].textContent = ("$" + ((currentBackedAmount + donatedAmount) / 1000)).replace(".",",");
+    values[1].textContent = ("" + (parseInt(values[1].textContent.replace(",", "")) + 1) / 1000).replace(".",",");
 }
