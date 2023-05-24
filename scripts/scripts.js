@@ -14,6 +14,7 @@ const radios = modal.querySelectorAll(".header_radio");
 const closeModal = document.querySelector(".close_icon");
 const options = document.querySelectorAll(".unShow");
 const thanks = document.querySelector(".thanksgiving");
+let donatedAmount = 0;
 
 dropdownMenu.style.transition = "all .25s ease-in-out";
 bookmarkBtn.style.transition = "all .25s ease-in-out";
@@ -105,8 +106,10 @@ for(const btn of confirmPledge) {
             if(input.value >= pledgeValue.textContent) {
                 modal.style.display = "none";
                 thanks.style.display = "flex";
+                manageStats(input);
             }
         }
+            
     });
 }
 
@@ -123,4 +126,13 @@ for(const btn of selectBtn) {
         body.classList.add("dark_overlay");
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+}
+
+function manageStats(input) {
+    donatedAmount = parseInt(input.value);
+    const backValues = document.querySelectorAll(".block_value");
+    const backedAmount = backValues[0].textContent.split("$")[1].replace(",","");
+    const backerAmount = backValues[1];
+    console.log(parseFloat(backedAmount));
+    backValues[0].textContent = `$${((backedAmount - donatedAmount) / 1000).toString.replace(".",",")}`;
 }
