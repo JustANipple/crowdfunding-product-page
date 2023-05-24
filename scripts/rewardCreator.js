@@ -64,7 +64,7 @@ function createDefault() {
         <div class="pledge_insertion">
           <label for="price" class="insertion_label">$</label>
           <input type="number" id="price" class="insertion_input">
-          <button class="inseriton_btn">Continue</button>
+          <button class="insertion_btn">Continue</button>
         </div>
       </div>
       `;

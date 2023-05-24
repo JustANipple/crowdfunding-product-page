@@ -770,7 +770,7 @@ p, h1, h2, h3, h4, h5, h6 {
   -webkit-appearance: none;
   margin: 0;
 }
-.rewards .option .pledge .pledge_insertion .inseriton_btn {
+.rewards .option .pledge .pledge_insertion .insertion_btn {
   border: none;
   background-color: hsl(176, 50%, 47%);
   padding: 0.875rem 1.75rem;

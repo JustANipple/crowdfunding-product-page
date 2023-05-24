@@ -2,7 +2,7 @@ const dropdownBtn = document.querySelector(".menu_dropdown_btn");
 const dropdownMenu = document.querySelector(".menu_options");
 const bookmarkBtn = document.querySelector(".button_bookmark");
 const bookmarkText = document.querySelector(".bookmark_text");
-const iconCircle = bookmarkBtn.querySelector("circle");
+const iconCircle = document.querySelector("circle");
 const iconPath = bookmarkBtn.querySelector("path");
 const navBar = document.querySelector(".nav_bar");
 const backProjectBtn = document.querySelector(".button_back_project");
@@ -13,6 +13,7 @@ const projectBtn = document.querySelector(".button_back_project");
 const radios = modal.querySelectorAll(".header_radio");
 const closeModal = document.querySelector(".close_icon");
 const options = document.querySelectorAll(".unShow");
+const thanks = document.querySelector(".thanksgiving");
 
 dropdownMenu.style.transition = "all .25s ease-in-out";
 bookmarkBtn.style.transition = "all .25s ease-in-out";
@@ -87,4 +88,39 @@ function closePledge() {
         const pledge = component.querySelector(".pledge");
         pledge.classList.add("unShow");
     }
+}
+
+const confirmPledge = document.querySelectorAll(".insertion_btn");
+for(const btn of confirmPledge) {
+    btn.addEventListener("click", () => {
+        const input = btn.parentElement.querySelector(".insertion_input");
+        let pledgeValue = btn.parentElement.parentElement.parentElement.querySelector(".price_value");
+        if(!pledgeValue) {
+            pledgeValue = 1;
+            if(input.value >= pledgeValue) {
+                modal.style.display = "none";
+                thanks.style.display = "flex";
+            }
+        } else {
+            if(input.value >= pledgeValue.textContent) {
+                modal.style.display = "none";
+                thanks.style.display = "flex";
+            }
+        }
+    });
+}
+
+const thanksBtn = document.querySelector(".thanksgiving_continue");
+thanksBtn.addEventListener("click", () => {
+    thanks.style.display = "none";
+    body.classList.remove("dark_overlay");
+})
+
+const selectBtn = document.querySelectorAll(".reward_btn");
+for(const btn of selectBtn) {
+    btn.addEventListener("click", () => {
+        modal.style.display = "flex";
+        body.classList.add("dark_overlay");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
