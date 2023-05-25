@@ -790,6 +790,28 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 1.125rem;
 }
 
+@media screen and (min-width: 768px) {
+  .rewards .option .reward {
+    position: relative;
+    padding: 2.5rem 2rem;
+  }
+  .rewards .option .reward .reward_header .header_block {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .rewards .option .reward .reward_header .header_block .reward_type {
+    font-size: 1.125rem;
+  }
+  .rewards .option .reward .reward_header .header_block .reward_price {
+    font-size: 0.8888888889rem;
+  }
+  .rewards .option .reward .reward_btn {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+  }
+}
 .back_project {
   display: flex;
   flex-direction: column;
@@ -815,9 +837,46 @@ p, h1, h2, h3, h4, h5, h6 {
 .back_project .back_header .title {
   font-size: 1.125rem;
 }
+.back_project .back_header .close_icon {
+  cursor: pointer;
+}
 .back_project .back_desc {
   color: hsl(0, 0%, 48%);
 }
 
+@media screen and (min-width: 768px) {
+  .back_project {
+    margin: 0;
+    max-width: 45.625rem;
+    padding: 3rem 3rem;
+    gap: 1rem;
+  }
+  .back_project .back_header .title {
+    font-size: 1.5rem;
+  }
+  .rewards {
+    padding-top: 1rem;
+  }
+  .rewards .option .reward {
+    position: relative;
+    padding: 2.5rem 2rem;
+  }
+  .rewards .option .reward .reward_header .header_block {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .rewards .option .reward .reward_header .header_block .reward_type {
+    font-size: 1rem;
+  }
+  .rewards .option .reward .reward_header .header_block .reward_price {
+    font-size: 0.8888888889rem;
+  }
+  .rewards .option .reward .reward_btn {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+  }
+}
 /* Abstracts */
 /* Base *//*# sourceMappingURL=main.css.map */

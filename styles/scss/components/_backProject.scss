@@ -19,9 +19,73 @@
         .title {
             font-size: calc(v.$fs * 1.125);
         }
+
+        .close_icon {
+            cursor: pointer;
+        }
     }
 
     .back_desc {
         color: v.$par-clr;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .back_project {
+        margin: 0;
+        max-width: 45.625rem;
+        padding: 3rem 3rem;
+        gap: 1rem;
+
+        .back_header {
+
+            .title {
+                font-size: calc(v.$fs * 1.5);
+            }
+        }
+    }
+
+    $padBlock: 2.5rem;
+    $padInine: 2rem;
+
+    .rewards {
+        padding-top: 1rem;
+
+        .option {
+
+            .reward {
+                position: relative;
+                padding: $padBlock $padInine;
+
+                .reward_header {
+
+                    //.header_radio{}
+
+                    .header_block {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .reward_type {
+                            font-size: v.$fs;
+                        }
+
+                        .reward_price {
+                            font-size: calc(v.$fs / 1.125);
+                        }
+                    }
+                }
+                
+                //.reward_description{}
+                //.reward_left{}
+
+                .reward_btn {
+                    position: absolute;
+                    right: $padBlock;
+                    bottom: $padInine;
+                }
+
+            }
+        }
     }
 }

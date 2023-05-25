@@ -15,8 +15,6 @@ $padInine: 1.5rem;
         border: 1px solid v.$stat-border-clr;
         border-radius: .5rem;
 
-
-
         .reward {
             display: flex;
             flex-direction: column;
@@ -182,6 +180,51 @@ $padInine: 1.5rem;
 
             .left_amount {
                 font-size: calc(v.$fs * 1.125);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    $padBlock: 2.5rem;
+    $padInine: 2rem;
+
+    .rewards {
+
+        .option {
+
+            .reward {
+                position: relative;
+                padding: $padBlock $padInine;
+
+                .reward_header {
+
+                    //.header_radio{}
+
+                    .header_block {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .reward_type {
+                            font-size: calc(v.$fs * 1.125);
+                        }
+
+                        .reward_price {
+                            font-size: calc(v.$fs / 1.125);
+                        }
+                    }
+                }
+                
+                //.reward_description{}
+                //.reward_left{}
+
+                .reward_btn {
+                    position: absolute;
+                    right: $padBlock;
+                    bottom: $padInine;
+                }
+
             }
         }
     }

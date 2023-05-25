@@ -14,7 +14,6 @@ const radios = modal.querySelectorAll(".header_radio");
 const closeModal = document.querySelector(".close_icon");
 const options = document.querySelectorAll(".unShow");
 const thanks = document.querySelector(".thanksgiving");
-let donatedAmount = 0;
 
 dropdownMenu.style.transition = "all .25s ease-in-out";
 bookmarkBtn.style.transition = "all .25s ease-in-out";
@@ -110,13 +109,12 @@ for(const btn of confirmPledge) {
                 thanks.style.display = "flex";
                 manageStats(input);
                 const id = btn.getAttribute("id");
-                for(const btn of rewardBtn) {
-                    if(btn.getAttribute("id") === id) {
-                        const left = btn.parentElement.parentElement.parentElement.querySelector("#" + id + ",.left_amount");
-                        left.textContent = parseInt(left.textContent) - 1;
+                const amounts = document.querySelectorAll(".left_amount");
+                for(const amount of amounts) {
+                    if(amount.getAttribute("id") === id) {
+                        amount.textContent = parseInt(amount.textContent) - 1;
                     }
                 }
-
             }
         } 
     });
@@ -143,11 +141,12 @@ if(localStorage.getItem("donators") === null) {
     let donations = 89914;
     let donators = 5007;
     localStorage.setItem("defDonations", `$${(donations/1000).toString().replace(".",",")}`);
-    localStorage.setItem("donators", (donators/1000).toString().replace(".",","));    
+    localStorage.setItem("donators", (donators/1000).toString().replace(".",","));
 }
 
 values[0].textContent = localStorage.getItem("defDonations");
 values[1].textContent = localStorage.getItem("donators").toString();
+document.querySelector(".progression_bar").setAttribute("value", localStorage.getItem("defDonations").replace("$", "").replace(",", ""));
 
 function manageStats(input) {
     //value entered
@@ -172,4 +171,3 @@ function manageStats(input) {
 
     document.querySelector(".progression_bar").setAttribute("value", localStorage.getItem("defDonations").replace("$", "").replace(",", ""));
 }
-
