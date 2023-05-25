@@ -121,13 +121,6 @@ for(const btn of confirmPledge) {
                 modal.style.display = "none";
                 thanks.style.display = "flex";
                 manageStats(input);
-                const id = btn.getAttribute("id");
-                const amounts = document.querySelectorAll(".left_amount");
-                for(const amount of amounts) {
-                    if(amount.getAttribute("id") === id) {
-                        amount.textContent = parseInt(amount.textContent) - 1;
-                    }
-                }
             }
         } 
     });

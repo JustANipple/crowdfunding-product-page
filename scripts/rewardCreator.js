@@ -54,9 +54,9 @@ function createDefault() {
         </div>
         <p class="reward_description">${rewardInfos[i].description}</p>
         <p class="reward_left"> 
-          <span class="left_amount" id="${rewardInfos[i].id}">${rewardInfos[i].left}</span> left
+          <span class="left_amount ${rewardInfos[i].id}">${rewardInfos[i].left}</span> left
         </p>
-        <button class="reward_btn" id="${rewardInfos[i].id}">Select Reward</button>
+        <button class="reward_btn ${rewardInfos[i].id}">Select Reward</button>
       </div>
   
       <div class="pledge">
@@ -64,7 +64,7 @@ function createDefault() {
         <div class="pledge_insertion">
           <label for="price" class="insertion_label">$</label>
           <input type="number" id="price" class="insertion_input">
-          <button class="insertion_btn" id="${rewardInfos[i].id}">Continue</button>
+          <button class="insertion_btn ${rewardInfos[i].id}">Continue</button>
         </div>
       </div>
       `;
