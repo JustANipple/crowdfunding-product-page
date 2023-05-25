@@ -14,16 +14,24 @@ const radios = modal.querySelectorAll(".header_radio");
 const closeModal = document.querySelector(".close_icon");
 const options = document.querySelectorAll(".unShow");
 const thanks = document.querySelector(".thanksgiving");
+const rewardSelect = document.querySelectorAll(".reward_btn");
+const rewardTypes = document.querySelectorAll(".reward_type");
 
 dropdownMenu.style.transition = "all .25s ease-in-out";
 bookmarkBtn.style.transition = "all .25s ease-in-out";
 iconCircle.style.transition = "all .25s ease-in-out";
 backProjectBtn.style.transition = "all .25s ease-in-out";
+for(const type of rewardTypes) {
+    type.style.transition = "all .25s ease-in-out";
+}
 for(const btn of selectRewardBtns) {
     btn.style.transition = "all .25s ease-in-out";
 }
 for(const option of options) {
     option.style.transition = "all .25s ease-in-out";
+}
+for(const btn of rewardSelect) {
+    btn.style.transition = "all .25s ease-in-out";
 }
 
 //Nav menu
@@ -79,6 +87,11 @@ for(const radio of radios) {
     radio.addEventListener("change", () => {
         closePledge();
         pledge.classList.remove("unShow");
+        const components = document.querySelectorAll(".option");
+        for(const comp of components) {
+            comp.classList.remove("showBorder");
+        }
+        component.classList.add("showBorder");
     });
 }
 

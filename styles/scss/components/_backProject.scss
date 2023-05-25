@@ -43,49 +43,75 @@
                 font-size: calc(v.$fs * 1.5);
             }
         }
-    }
 
-    $padBlock: 2.5rem;
-    $padInine: 2rem;
+        .rewards {
+            padding-top: 1rem;
+    
+            .option:nth-child(1) {
+                
+                .reward {
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
 
-    .rewards {
-        padding-top: 1rem;
-
-        .option {
-
-            .reward {
-                position: relative;
-                padding: $padBlock $padInine;
-
-                .reward_header {
-
-                    //.header_radio{}
-
-                    .header_block {
-                        flex-direction: row;
-                        justify-content: space-between;
-                        width: 100%;
-
-                        .reward_type {
-                            font-size: v.$fs;
+            .option {
+    
+                .reward {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                    height: fit-content;
+                    padding: 2rem;
+    
+                    .reward_header {
+                        grid-column: 1/-1;
+                        display: grid;
+                        grid-template-columns: 1fr 10fr 10fr;
+                        height: fit-content;
+                        
+                        .header_radio {
+                            grid-column: 1;
+                            max-width: .75rem;
                         }
-
-                        .reward_price {
-                            font-size: calc(v.$fs / 1.125);
+    
+                        .header_block {
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 1rem;
+                            grid-column: 2/-1;
+    
+                            .reward_type {
+                                font-size: v.$fs;
+                            }
+    
+                            .reward_price {
+                                font-weight: v.$fw-medium;
+                            }
                         }
                     }
+    
+                    .reward_description {
+                        grid-column: 1/10;
+                        grid-row: 2;
+                        padding-inline-start: 2.375em;
+                        font-size: calc(v.$fs / 1.125);
+                    }
+    
+                    .reward_left {
+                        grid-column: -1;
+                        grid-row: 1;
+                        height: fit-content;
+                    }
+    
                 }
-                
-                //.reward_description{}
-                //.reward_left{}
 
-                .reward_btn {
-                    position: absolute;
-                    right: $padBlock;
-                    bottom: $padInine;
+                .pledge {
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
-
             }
         }
     }
+
 }

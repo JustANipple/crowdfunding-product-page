@@ -170,6 +170,10 @@ $padInine: 1.5rem;
         }
     }
 
+    .showBorder {
+        border: 2px solid v.$btn-clr;
+    }
+
     .modal:nth-child(1) .reward {
         gap: 2.5rem;
     }
@@ -186,8 +190,6 @@ $padInine: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
-    $padBlock: 2.5rem;
-    $padInine: 2rem;
 
     .rewards {
 
@@ -195,7 +197,7 @@ $padInine: 1.5rem;
 
             .reward {
                 position: relative;
-                padding: $padBlock $padInine;
+                padding: 2.5rem 2rem;
 
                 .reward_header {
 
@@ -208,6 +210,11 @@ $padInine: 1.5rem;
 
                         .reward_type {
                             font-size: calc(v.$fs * 1.125);
+
+                            &:hover {
+                                color: v.$btn-clr;
+                                cursor: pointer;
+                            }
                         }
 
                         .reward_price {
@@ -221,8 +228,13 @@ $padInine: 1.5rem;
 
                 .reward_btn {
                     position: absolute;
-                    right: $padBlock;
-                    bottom: $padInine;
+                    right: 1.5rem;
+                    bottom: 2rem;
+                    font-size: calc(v.$fs / 1.125);
+
+                    &:hover {
+                        background-color: v.$btn-active-clr;
+                    }
                 }
 
             }
