@@ -20,11 +20,11 @@ body {
   [background-attachment] 
   [background-position] / [background-size];
   */
-  background: hsl(0, 0%, 98%) url(../../../images/image-hero-mobile.jpg) no-repeat center top/contain;
+  background: hsl(0, 0%, 98%) url(../../images/image-hero-mobile.jpg) no-repeat center top/contain;
 }
 @media screen and (min-width: 425px) {
   body {
-    background-image: url(../../../images/image-hero-desktop.jpg);
+    background-image: url(../../images/image-hero-desktop.jpg);
   }
 }
 @media screen and (min-width: 768px) {
@@ -179,7 +179,7 @@ p, h1, h2, h3, h4, h5, h6 {
   max-height: 13rem;
 }
 .nav_bar .bar_menu .menu_dropdown_btn {
-  background: transparent url(../../../images/icon-hamburger.svg) no-repeat center top;
+  background: transparent url(../../images/icon-hamburger.svg) no-repeat center top;
   width: 1rem;
   height: 1rem;
   overflow: hidden;
@@ -188,7 +188,7 @@ p, h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 .nav_bar .bar_menu .closeMenu {
-  background-image: url(../../../images/icon-close-menu.svg);
+  background-image: url(../../images/icon-close-menu.svg);
 }
 
 @media screen and (min-width: 704px) {
