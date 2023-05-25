@@ -94,6 +94,7 @@ function closePledge() {
 const confirmPledge = document.querySelectorAll(".insertion_btn");
 for(const btn of confirmPledge) {
     btn.addEventListener("click", () => {
+        const rewardBtn = document.querySelectorAll(".reward_btn");
         const input = btn.parentElement.querySelector(".insertion_input");
         let pledgeValue = btn.parentElement.parentElement.parentElement.querySelector(".price_value");
         if(!pledgeValue) {
@@ -101,15 +102,23 @@ for(const btn of confirmPledge) {
             if(input.value >= pledgeValue) {
                 modal.style.display = "none";
                 thanks.style.display = "flex";
+                manageStats(input);
             }
         } else {
             if(input.value >= pledgeValue.textContent) {
                 modal.style.display = "none";
                 thanks.style.display = "flex";
                 manageStats(input);
+                const id = btn.getAttribute("id");
+                for(const btn of rewardBtn) {
+                    if(btn.getAttribute("id") === id) {
+                        const left = btn.parentElement.parentElement.parentElement.querySelector("#" + id + ",.left_amount");
+                        left.textContent = parseInt(left.textContent) - 1;
+                    }
+                }
+
             }
-        }
-            
+        } 
     });
 }
 
@@ -128,12 +137,39 @@ for(const btn of selectBtn) {
     });
 }
 
+const values = document.querySelectorAll(".block_value");
+
+if(localStorage.getItem("donators") === null) {
+    let donations = 89914;
+    let donators = 5007;
+    localStorage.setItem("defDonations", `$${(donations/1000).toString().replace(".",",")}`);
+    localStorage.setItem("donators", (donators/1000).toString().replace(".",","));    
+}
+
+values[0].textContent = localStorage.getItem("defDonations");
+values[1].textContent = localStorage.getItem("donators").toString();
+
 function manageStats(input) {
     //value entered
-    donatedAmount = parseInt(input.value);
-    //list of stats
-    const values = document.querySelectorAll(".block_value");
-    const currentBackedAmount = parseInt(values[0].textContent.split("$")[1].replace(",",""));
-    values[0].textContent = ("$" + ((currentBackedAmount + donatedAmount) / 1000)).replace(".",",");
-    values[1].textContent = ("" + (parseInt(values[1].textContent.replace(",", "")) + 1) / 1000).replace(".",",");
+    const enteredDonation = parseInt(input.value);
+    
+    const currentDonationsValue = parseInt(localStorage.getItem("defDonations").split("$")[1].replace(",",""));
+    let newDonationsValue = ((currentDonationsValue + enteredDonation)).toString();
+    if(newDonationsValue.length === 5) {
+        newDonationsValue = "$" + newDonationsValue.slice(0,2) + "," + newDonationsValue.slice(2, newDonationsValue.length);
+    } else {
+        newDonationsValue = "$" + newDonationsValue.slice(0,3) + "," + newDonationsValue.slice(3, newDonationsValue.length);
+    }
+
+    localStorage.setItem("defDonations", newDonationsValue);
+    values[0].textContent = localStorage.getItem("defDonations");
+
+    const currentDonatorsValue = parseInt(localStorage.getItem("donators").replace(",", ""));
+    let newDonatorsValue = (currentDonatorsValue + 1).toString();
+    newDonatorsValue = newDonatorsValue.slice(0,1) + "," + newDonatorsValue.slice(1, newDonatorsValue.length);
+    localStorage.setItem("donators", newDonatorsValue);
+    values[1].textContent = localStorage.getItem("donators");
+
+    document.querySelector(".progression_bar").setAttribute("value", localStorage.getItem("defDonations").replace("$", "").replace(",", ""));
 }
+
