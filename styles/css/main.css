@@ -236,7 +236,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .crowdfund_header::before {
   content: "";
-  background-image: url(../../../images/logo-mastercraft.svg);
+  background-image: url(../../images/logo-mastercraft.svg);
   position: absolute;
   left: 0;
   right: 0;
