@@ -62,7 +62,7 @@ function createDefault() {
       <div class="pledge">
         <p class="pledge_title">Enter your pledge</p>
         <div class="pledge_insertion">
-          <label for="price" class="insertion_label">$</label>
+          <label class="insertion_label">$</label>
           <input type="number" class="insertion_input">
           <button class="insertion_btn ${rewardInfos[i].id}">Continue</button>
         </div>
